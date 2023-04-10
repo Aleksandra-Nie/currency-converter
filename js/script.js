@@ -12,15 +12,6 @@ const rateGBP = 5.2836;
 const rateCHF = 4.7156;
 const rateAUD = 2.9292;
 
-const submitForm = (event) => {
-    event.preventDefault();
-
-    const amountElement = document.querySelector(".js-amount");
-    const amount = Number(amountElement.value);
-    const currencyTo = currencyToElement.value;
-    const currencyFrom = currencyFromElement.value;
-    const result = calculateResult (amount, currencyFrom, currencyTo);
-}
 
     const calculateResult = (amount, currencyFrom, currencyTo) => {
     switch (currencyFrom) {
@@ -51,30 +42,34 @@ const submitForm = (event) => {
 
     switch (currencyTo) {
         case "USD":
-            result = part / rateUSD;
-            break;
-
+            return part / rateUSD;
+           
         case "EUR":
-            result = part / rateEUR;
-            break;
+            return part / rateEUR;
 
         case "GBP":
-            result = part / rateGBP;
-            break;
+            return part / rateGBP;
 
         case "CHF":
-            result = part / rateCHF;
-            break;
-
+            return part / rateCHF;
+           
         case "AUD":
-            result = part / rateAUD;
-            break;
-
+            return part / rateAUD;
+            
             case "PLN":
-            result = part / ratePLN;
-            break;
+            return part / ratePLN;
     }
-   
+};
+
+const submitForm = (event) => {
+    event.preventDefault();
+
+    const amountElement = document.querySelector(".js-amount");
+    const amount = Number(amountElement.value);
+    const currencyTo = currencyToElement.value;
+    const currencyFrom = currencyFromElement.value;
+    const result = calculateResult (amount, currencyFrom, currencyTo);
+    
     resultElement.innerHTML = `${amount.toFixed(2)} ${currencyFrom} = <strong>${result.toFixed(2)} ${currencyTo}</strong>`;
 };
 

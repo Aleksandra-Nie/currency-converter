@@ -1,5 +1,4 @@
 {
-    const formElement = document.querySelector(".js-form");
     const currencyToElement = document.querySelector(".js-currencyTo");
     const currencyFromElement = document.querySelector(".js-currencyFrom");
     const resultElement = document.querySelector(".js-result");
@@ -76,8 +75,6 @@
         resultText(amount, currencyFrom, currencyTo, result);
     };
 
-    formElement.addEventListener("submit", submitForm);
-
     const calculateCurrencyRate = (currencyFrom, currencyTo) => {
 
 
@@ -135,13 +132,19 @@
         currencyRateText(currencyFrom, currencyTo, result);
     };
 
-    formElement.addEventListener("input", currencyInput);
-
     const resetForm = (event) => {
         resultElement.innerText = "";
         exchangeRateElement.innerText = "";
     };
 
+    const init = () => {
+
+        const formElement = document.querySelector(".js-form");
+
+        formElement.addEventListener("submit", submitForm);
+        formElement.addEventListener("input", currencyInput);
         formElement.addEventListener("reset", resetForm);
-    }
-   
+    };
+    
+    init ();
+}

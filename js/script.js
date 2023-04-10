@@ -137,9 +137,11 @@
 
     formElement.addEventListener("input", currencyInput);
 
-    formElement.addEventListener("reset", (event) => {
+    const resetForm = (event) => {
         resultElement.innerText = "";
         exchangeRateElement.innerText = "";
+    };
 
-    });
-}
+        formElement.addEventListener("reset", resetForm);
+    }
+   

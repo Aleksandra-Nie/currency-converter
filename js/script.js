@@ -1,3 +1,4 @@
+{
 const formElement = document.querySelector(".js-form");
 const currencyToElement = document.querySelector(".js-currencyTo");
 const currencyFromElement = document.querySelector(".js-currencyFrom");
@@ -18,9 +19,10 @@ const submitForm = (event) => {
     const amount = Number(amountElement.value);
     const currencyTo = currencyToElement.value;
     const currencyFrom = currencyFromElement.value;
+    const result = calculateResult (amount, currencyFrom, currencyTo);
+}
 
-    let result;
-
+    const calculateResult = (amount, currencyFrom, currencyTo) => {
     switch (currencyFrom) {
         case "USD":
             part = amount * rateUSD;
@@ -136,3 +138,4 @@ resultElement.innerText = "";
 exchangeRateElement.innerText = "";
 
 });
+}

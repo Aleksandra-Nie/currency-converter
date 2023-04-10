@@ -78,7 +78,7 @@
 
     formElement.addEventListener("submit", submitForm);
 
-    formElement.addEventListener("input", () => {
+     const calculateCurrencyRate = () => {
         const currencyTo = currencyToElement.value;
         const currencyFrom = currencyFromElement.value;
 
@@ -105,23 +105,22 @@
 
         switch (currencyTo) {
             case "USD":
-                result = rate / rateUSD;
-                break;
+                return rate / rateUSD;
+                
             case "EUR":
-                result = rate / rateEUR;
-                break;
+                return rate / rateEUR;
+                
             case "GBP":
-                result = rate / rateGBP;
-                break;
+                return rate / rateGBP;
+                
             case "CHF":
-                result = rate / rateCHF;
-                break;
+                return rate / rateCHF;
+                
             case "AUD":
-                result = rate / rateAUD;
-                break;
+                return rate / rateAUD;
+                
             case "PLN":
-                result = rate / ratePLN;
-                break;
+                return rate / ratePLN;
         }
 
         if (currencyFrom === currencyTo) {
@@ -129,7 +128,9 @@
         } else if (currencyFrom !== currencyTo) {
             exchangeRateElement.innerHTML = `1 ${currencyFrom} = ${result.toFixed(4)} ${currencyTo}`;
         }
-    });
+    };
+
+    formElement.addEventListener("input", calculateCurrencyRate);
 
     formElement.addEventListener("reset", (event) => {
         resultElement.innerText = "";

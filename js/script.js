@@ -122,12 +122,7 @@
             case "PLN":
                 return rate / ratePLN;
         }
-
-        if (currencyFrom === currencyTo) {
-            exchangeRateElement.innerHTML = `1 ${currencyFrom} = ${result.toFixed(0)} ${currencyTo}`;
-        } else if (currencyFrom !== currencyTo) {
-            exchangeRateElement.innerHTML = `1 ${currencyFrom} = ${result.toFixed(4)} ${currencyTo}`;
-        }
+            exchangeRateElement.innerHTML = `1 ${currencyFrom} = ${result.toFixed(currencyFrom === currencyTo ? 0 : 4)} ${currencyTo}`;
     };
 
     formElement.addEventListener("input", calculateCurrencyRate);

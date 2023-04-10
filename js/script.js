@@ -1,5 +1,4 @@
 let formElement = document.querySelector(".js-form");
-let amountElement = document.querySelector(".js-amount");
 let currencyToElement = document.querySelector(".js-currencyTo");
 let currencyFromElement = document.querySelector(".js-currencyFrom");
 let resultElement = document.querySelector(".js-result");
@@ -12,8 +11,10 @@ let rateGBP = 5.2836;
 let rateCHF = 4.7156;
 let rateAUD = 2.9292;
 
-formElement.addEventListener("submit", (event) => {
+const submitForm = (event) => {
     event.preventDefault();
+
+    let amountElement = document.querySelector(".js-amount");
     let amount = Number(amountElement.value);
     let currencyTo = currencyToElement.value;
     let currencyFrom = currencyFromElement.value;
@@ -73,7 +74,9 @@ formElement.addEventListener("submit", (event) => {
     }
    
     resultElement.innerHTML = `${amount.toFixed(2)} ${currencyFrom} = <strong>${result.toFixed(2)} ${currencyTo}</strong>`;
-});
+};
+
+formElement.addEventListener("submit", submitForm);
 
 formElement.addEventListener("input", () => {
     let currencyTo = currencyToElement.value;

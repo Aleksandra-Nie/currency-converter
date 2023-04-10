@@ -1,23 +1,23 @@
-let formElement = document.querySelector(".js-form");
-let currencyToElement = document.querySelector(".js-currencyTo");
-let currencyFromElement = document.querySelector(".js-currencyFrom");
-let resultElement = document.querySelector(".js-result");
-let exchangeRateElement = document.querySelector(".js-exchangeRate");
+const formElement = document.querySelector(".js-form");
+const currencyToElement = document.querySelector(".js-currencyTo");
+const currencyFromElement = document.querySelector(".js-currencyFrom");
+const resultElement = document.querySelector(".js-result");
+const exchangeRateElement = document.querySelector(".js-exchangeRate");
 
-let ratePLN = 1.00;
-let rateUSD = 4.3981;
-let rateEUR = 4.6871;
-let rateGBP = 5.2836;
-let rateCHF = 4.7156;
-let rateAUD = 2.9292;
+const ratePLN = 1.00;
+const rateUSD = 4.3981;
+const rateEUR = 4.6871;
+const rateGBP = 5.2836;
+const rateCHF = 4.7156;
+const rateAUD = 2.9292;
 
 const submitForm = (event) => {
     event.preventDefault();
 
-    let amountElement = document.querySelector(".js-amount");
-    let amount = Number(amountElement.value);
-    let currencyTo = currencyToElement.value;
-    let currencyFrom = currencyFromElement.value;
+    const amountElement = document.querySelector(".js-amount");
+    const amount = Number(amountElement.value);
+    const currencyTo = currencyToElement.value;
+    const currencyFrom = currencyFromElement.value;
 
     let result;
 
@@ -79,8 +79,8 @@ const submitForm = (event) => {
 formElement.addEventListener("submit", submitForm);
 
 formElement.addEventListener("input", () => {
-    let currencyTo = currencyToElement.value;
-    let currencyFrom = currencyFromElement.value;
+    const currencyTo = currencyToElement.value;
+    const currencyFrom = currencyFromElement.value;
 
     switch (currencyFrom) {
         case "USD":

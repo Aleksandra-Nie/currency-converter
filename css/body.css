@@ -1,0 +1,9 @@
+.body {
+    background-image: url("../images/background.jpg"), url("../images/background2.jpg");
+    background-position: center;
+    background-size: contain, cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: auto;
+    resize:both;
+}

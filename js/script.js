@@ -145,6 +145,6 @@
         formElement.addEventListener("input", currencyInput);
         formElement.addEventListener("reset", resetForm);
     };
-    
-    init ();
+
+    init();
 }

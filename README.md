@@ -23,3 +23,6 @@ Currency exchange rates were based according to the average exchange rate of the
 - 1 GBP = 5.2836 PLN
 - 1 CHF = 4.7156 PLN
 - 1 AUD = 2.9292 PLN
+## Future improvements
+- include more currencies
+- data based on the latest currency exchange rates
